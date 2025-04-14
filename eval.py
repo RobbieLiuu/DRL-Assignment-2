@@ -14,6 +14,7 @@ import random
 import sys
 import importlib
 import env
+from game_2048env import NTupleApproximator
 
 if __name__ == "__main__":
     env.eval_score()  
