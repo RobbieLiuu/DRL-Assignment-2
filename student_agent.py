@@ -14,8 +14,8 @@ import GPUtil
 import gym_bandits
 import torch
 from my_td_mcts import TD_MCTS,TD_MCTS_Node
-from 2048env import Game2048Env
-from 2048env import NTupleApproximator
+from game_2048env import Game2048Env
+from game_2048env import NTupleApproximator
 
 torch.cuda.empty_cache()
 
