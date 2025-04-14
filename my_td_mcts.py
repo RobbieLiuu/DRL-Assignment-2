@@ -2,7 +2,8 @@ import copy
 import random
 import math
 import numpy as np
-
+from 2048env import Game2048Env
+from 2048env import NTupleApproximator
 # Note: This MCTS implementation is almost identical to the previous one,
 # except for the rollout phase, which now incorporates the approximator.
 
