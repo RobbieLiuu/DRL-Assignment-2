@@ -530,7 +530,8 @@ def load_approximator(filename='checkpoint2-20000.pkl'):
         print("No checkpoint file found. Please train the approximator first.")
         return None
 
-
+td_mcts = TD_MCTS(env, approximator, iterations=50, exploration_constant=1.41, rollout_depth=10, gamma=0.99)
+state = env.reset()
 
 def get_action(state, score):
     """
@@ -556,10 +557,10 @@ def get_action(state, score):
     env = Game2048Env()
     env.board = state.copy()
     env.score = score
-    td_mcts = TD_MCTS(env, approximator, iterations=50, exploration_constant=1.41, rollout_depth=10, gamma=0.99)
+    
 
     
-    root = TD_MCTS_Node(state, env.score)
+    root = TD_MCTS_Node(state,env, env.score)
 
     # Run multiple simulations to build the MCTS tree
     for _ in range(td_mcts.iterations):
