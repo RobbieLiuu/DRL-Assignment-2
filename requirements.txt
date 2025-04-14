@@ -3,3 +3,9 @@ requests
 argparse
 torch
 matplotlib
+numpy==1.23.5
+gym
+git+https://github.com/JKCooper2/gym-bandits.git
+torch
+gputil
+gdown
