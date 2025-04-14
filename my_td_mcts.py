@@ -2,7 +2,7 @@ import copy
 import random
 import math
 import numpy as np
-
+from n_tuple_v2 import NTupleApproximator
 # Note: This MCTS implementation is almost identical to the previous one,
 # except for the rollout phase, which now incorporates the approximator.
 
