@@ -530,7 +530,7 @@ def load_approximator(filename='checkpoint2-20000.pkl'):
         print("No checkpoint file found. Please train the approximator first.")
         return None
         
-
+approximator = load_approximator()
 
 def get_action(state, score):
     """
@@ -543,7 +543,9 @@ def get_action(state, score):
     Returns:
         action: 0 (up), 1 (down), 2 (left), or 3 (right)
     """
-    approximator = load_approximator()
+    
+    global approximator
+    #approximator = load_approximator()
     
     # Load the approximator if not already loaded
     if approximator is None:
