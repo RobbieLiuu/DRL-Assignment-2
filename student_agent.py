@@ -14,6 +14,7 @@ import GPUtil
 import gym_bandits
 import torch
 from my_td_mcts import TD_MCTS,TD_MCTS_Node
+from n_tuple_v2 import NTupleApproximator
 torch.cuda.empty_cache()
 
 
