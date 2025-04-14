@@ -359,7 +359,7 @@ class NTupleApproximator:
 
 # Node for TD-MCTS using the TD-trained value approximator
 class TD_MCTS_Node:
-    def __init__(self, state, score, parent=None, action=None,env):
+    def __init__(self,env, state, score, parent=None, action=None):
         """
         state: current board state (numpy array)
         score: cumulative score at this node
@@ -483,7 +483,7 @@ class TD_MCTS:
         if node.fully_expanded() == False:
             selected_action = random.choice(node.untried_actions)
             sim_env.step(selected_action)
-            newNode = TD_MCTS_Node(sim_env.board.copy(), sim_env.score, parent=node, action=selected_action,env=sim_env)
+            newNode = TD_MCTS_Node(sim_env.board.copy(), env=sim_env,sim_env.score, parent=node, action=selected_action)
             node.children[selected_action] = newNode
             node.untried_actions.remove(selected_action)
             node = newNode
