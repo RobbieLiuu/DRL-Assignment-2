@@ -19,7 +19,6 @@ import numpy as np
 from collections import defaultdict
 import pickle
 import os
-from student_agent import Game2048Env
 import GPUtil
 import gym_bandits
 import gym
