@@ -40,6 +40,7 @@ import gym
 import torch
 torch.cuda.empty_cache()
 import dill as pickle
+from game_2048env import TD_MCTS,TD_MCTS_Node, NTupleApproximator
 
 # -------------------------------
 # TODO: Define transformation functions (rotation and reflection), i.e., rot90, rot180, ..., etc.
