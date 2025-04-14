@@ -39,7 +39,7 @@ import gym_bandits
 import gym
 import torch
 torch.cuda.empty_cache()
-import dill as pickle
+import dill 
 from game_2048env import TD_MCTS,TD_MCTS_Node, NTupleApproximator
 
 # -------------------------------
@@ -515,7 +515,7 @@ approximator = None
 
 
 
-
+dill._dill._reverse_typemap['__main__.NTupleApproximator'] = NTupleApproximator
 
 
 
@@ -523,7 +523,7 @@ def load_approximator(filename='checkpoint2-20000.pkl'):
     """Load the trained N-Tuple Approximator from a checkpoint file"""
     if os.path.exists(filename):
         with open(filename, 'rb') as f:
-            checkpoint = pickle.load(f)
+            checkpoint = dill.load(f)
         print(f"Approximator loaded from checkpoint (episode {checkpoint['episode'] + 1})")
         return checkpoint['approximator']
     else:
