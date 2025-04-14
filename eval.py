@@ -14,8 +14,6 @@ import random
 import sys
 import importlib
 import env
-import student_agent
-
 
 if __name__ == "__main__":
     env.eval_score()  
