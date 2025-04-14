@@ -37,7 +37,7 @@ def get_gpu_with_most_memory():
             max_free_mem = free_mem
             gpu_id_with_max_mem = gpu.id
     return gpu_id_with_max_mem, max_free_mem
-
+approximator = None  
 
 def load_approximator(filename='checkpoint2-20000.pkl'):
     """Load the trained N-Tuple Approximator from a checkpoint file"""
