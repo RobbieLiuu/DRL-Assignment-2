@@ -39,7 +39,7 @@ import gym_bandits
 import gym
 import torch
 torch.cuda.empty_cache()
-
+import dill as pickle
 
 # -------------------------------
 # TODO: Define transformation functions (rotation and reflection), i.e., rot90, rot180, ..., etc.
@@ -483,7 +483,7 @@ class TD_MCTS:
         if node.fully_expanded() == False:
             selected_action = random.choice(node.untried_actions)
             sim_env.step(selected_action)
-            newNode = TD_MCTS_Node(sim_env.board.copy(), env=sim_env,sim_env.score, parent=node, action=selected_action)
+            newNode = TD_MCTS_Node(sim_env, sim_env.board.copy(), sim_env.score, parent=node, action=selected_action)
             node.children[selected_action] = newNode
             node.untried_actions.remove(selected_action)
             node = newNode
