@@ -519,7 +519,7 @@ approximator = None
 
 
 
-def load_approximator(filename='checkpoint2-20000.pkl'):
+def load_approximator(filename='checkpoint4.pkl'):
     """Load the trained N-Tuple Approximator from a checkpoint file"""
     if os.path.exists(filename):
         with open(filename, 'rb') as f:
